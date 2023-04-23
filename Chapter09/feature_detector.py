@@ -12,8 +12,8 @@ class DenseDetector():
     def detect(self, img):
         keypoints = []
         rows, cols = img.shape[:2]
-        for x in range(self.initImgBound, rows, self.initFeatureScale):
-            for y in range(self.initImgBound, cols, self.initFeatureScale):
+        for y in range(self.initImgBound, rows, self.initFeatureScale):
+            for x in range(self.initImgBound, cols, self.initFeatureScale):
                 keypoints.append(cv2.KeyPoint(float(x), float(y), self.initXyStep))
         return keypoints 
 
